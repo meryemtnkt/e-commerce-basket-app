@@ -24,15 +24,17 @@ import router from '@/router.js';
 
 
 
-const isLoading=ref(false)
+const isLoading = ref(true)
 
 const list = computed(() => {
-  return useProductStore().productList
+  const productList = useProductStore().productList;
+  isLoading.value = false;
+  return productList;
 })
 
 const addToCart = async (product)=> {
   await useProductStore().addToCart(product)
-  router.push('/order');
+  await router.push('/order');
 }
 onMounted(async () => {
   await useProductStore().fetchList()
