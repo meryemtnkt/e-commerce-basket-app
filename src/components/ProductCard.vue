@@ -4,7 +4,7 @@
     <h3 class="product-card__title">{{ name }}</h3>
     <div class="product-card__action">
       <span class="price">{{ price }} {{ currency }}</span>
-      <button  @click="emit('addToCart')">Add Basket</button>
+      <button class="btn add" @click="addToCart">Add Basket</button>
     </div>
   </div>
 </template>
@@ -12,22 +12,24 @@
 <script setup>
 import { defineProps, defineEmits } from 'vue';
 
-const { emit } = defineEmits(['addToCart']);
-
 const props = defineProps({
-  imageUrl: {
-    type: String,
-  },
-  name: {
-    type: String,
-  },
-  price: {
-    type: String,
-  },
-  currency: {
-    type: String,
-  },
+  imageUrl: String,
+  name: String,
+  price: String,
+  currency: String,
 });
+
+const emit  = defineEmits(['addToCart']);
+
+const addToCart = () => {
+  const product = {
+    imageUrl: props.imageUrl,
+    name: props.name,
+    price: props.price,
+    currency: props.currency,
+  };
+  emit('addToCart', product);
+};
 
 </script>
 
