@@ -6,11 +6,13 @@ export const useProductStore = defineStore("product", {
     productList: [],
     productItems: [],
     orderMessage: null,
+    isLoading: true,
   }),
   getters: {},
   actions: {
     async fetchList() {
       const response = await fetchListings();
+      this.isLoading = false;
       this.productList = response.data;
     },
     async addToCart(product) {

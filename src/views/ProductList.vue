@@ -1,6 +1,6 @@
 <template>
   <h3>E-commerce Basket App</h3>
-  <div v-if="isLoading" class="spinner">
+  <div v-if="useProductStore().isLoading" class="spinner">
     <div class="spinner__circle"></div>
   </div>
   <div class="product-list">
@@ -22,11 +22,8 @@ import { useProductStore } from "@/store";
 import ProductCard from "@/components/ProductCard.vue";
 import router from "@/router.js";
 
-const isLoading = ref(true);
-
 const list = computed(() => {
   const productList = useProductStore().productList;
-  isLoading.value = false;
   return productList;
 });
 
