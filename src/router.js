@@ -1,18 +1,18 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory } from "vue-router";
 const routes = [
-    {
-        path: '/',
-        component: () => import('@/views/ProductList.vue'),
-    },
-    {
-        path: '/order',
-        component: () => import('@/views/OrderPage.vue'),
-    },
+  {
+    path: "/",
+    component: () => import("@/views/ProductList.vue"),
+  },
+  {
+    path: "/order",
+    component: () => import("@/views/OrderPage.vue"),
+  },
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
+  history: createWebHistory(),
+  routes,
 });
 
 export default router;

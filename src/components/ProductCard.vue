@@ -1,6 +1,6 @@
 <template>
   <div class="product-card">
-    <img :src="imageUrl" alt="product-img" class="product-card__image">
+    <img :src="imageUrl" alt="product-img" class="product-card__image" />
     <h3 class="product-card__title">{{ name }}</h3>
     <div class="product-card__action">
       <span class="price">{{ price }} {{ currency }}</span>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
+import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
   imageUrl: String,
@@ -19,7 +19,7 @@ const props = defineProps({
   currency: String,
 });
 
-const emit  = defineEmits(['addToCart']);
+const emit = defineEmits(["addToCart"]);
 
 const addToCart = () => {
   const product = {
@@ -28,10 +28,8 @@ const addToCart = () => {
     price: props.price,
     currency: props.currency,
   };
-  emit('addToCart', product);
+  emit("addToCart", product);
 };
-
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
