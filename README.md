@@ -1,4 +1,19 @@
-# e-commerce-basket-app
+# E-commerce Basket Mini App
+
+## Description
+```
+The project is a frontend implementation of a simple shopping flow, allowing users to browse items, add them to their shopping cart, and place orders.
+```
+
+## Tools used
+#### Vue3 js
+#### Axios
+#### Pinia
+#### Vue-router
+#### Jest
+#### Sass
+#### Eslint
+
 
 ## Project setup
 ```
@@ -20,5 +35,9 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### For unit testing
+
+```
+npm run test:unit
+```
+
