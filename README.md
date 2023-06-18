@@ -11,7 +11,7 @@ The project is a frontend implementation of a simple shopping flow, allowing use
 #### Pinia
 #### Vue-router
 #### Jest
-#### Sass
+#### Scss
 #### Eslint
 
 
